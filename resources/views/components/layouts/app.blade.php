@@ -13,8 +13,7 @@
     {{-- NAVBAR mobile only --}}
     <x-nav sticky class="lg:hidden">
         <x-slot:brand>
-            <div class="text-3xl">Unibook Store</div>
-
+            <x-button label="Unibook Store" link="/" icon="o-sparkles" class="text-xl btn-ghost" />        
         </x-slot:brand>
         <x-slot:actions>
             <label for="main-drawer" class="lg:hidden mr-3">
@@ -29,9 +28,10 @@
         <x-slot:sidebar drawer="main-drawer" class="bg-base-100 lg:bg-inherit">
 
             {{-- BRAND --}}
-            <div class="flex-inline justify-end items-center p-5 pt-3">
-                <div class="text-4xl">Unibook Store</div>
+            <div class="p-2 pt-4 pl-4">
+                <x-button label="Unibook Store" link="/" icon="o-sparkles" class="text-xl btn-ghost" />
             </div>
+
 
             {{-- MENU --}}
             <x-menu activate-by-route>
@@ -54,7 +54,7 @@
                 <x-menu-item title="Home" icon="o-sparkles" link="/" />
                 <div class="relative">
                     @unless ($user = auth()->user())
-                        <div class="absolute top-0 left-0 w-full h-full z-10 bg-gray-50/50"></div>
+                        <div class="absolute top-0 left-0 w-full h-full z-10 bg-gray-50/50 dark:bg-gray-900/50 rounded"></div>
                     @endunless
                     <x-menu-item title="Admin" icon="o-users" link="/admin" class="" />
                     <x-menu-item title="Pengadaan" icon="o-clipboard-document-list" link="/sourcing"  class="" />
